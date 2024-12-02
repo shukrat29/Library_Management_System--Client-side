@@ -4,9 +4,10 @@ import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import { Sidebar } from "./Sidebar";
+import { PrivateRoute } from "../auth/PrivateRoute";
 export const UserLayout = () => {
   return (
-    <div>
+    <PrivateRoute>
       {/* navbar */}
       <Header />
 
@@ -31,6 +32,6 @@ export const UserLayout = () => {
 
       {/* footer */}
       <Footer />
-    </div>
+    </PrivateRoute>
   );
 };

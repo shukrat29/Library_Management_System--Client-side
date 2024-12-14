@@ -1,31 +1,23 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import CustomInput from "../../components/customInput/CustomInput";
+import { signUpInputs } from "../../assets/customInputs/userSignUpInputs";
 
 const SignUpPage = () => {
   return (
-    <Form>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Enter First Name</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Enter Last Name</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" />
-      </Form.Group>
+    <div className="d-flex justify-content-center pt-5">
+      <Form style={{ width: "550px" }} className="card p-5 shadow-lg">
+        <h3>Welcome to library</h3>
+        <hr />
+        {signUpInputs.map((input) => (
+          <CustomInput key={input.name} {...input} />
+        ))}
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" />
-      </Form.Group>
-
-      <Button variant="primary" type="submit">
-        Sign Up
-      </Button>
-    </Form>
+        <Button variant="primary" type="submit">
+          Sign Up
+        </Button>
+      </Form>
+    </div>
   );
 };
 
